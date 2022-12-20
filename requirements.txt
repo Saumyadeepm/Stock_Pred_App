@@ -6,7 +6,7 @@ pandas_datareader
 yfinance
 datetime
 scikit-learn
-keras
+tensorflow
 streamlit
 yahoo_fin
 pandas_ta
