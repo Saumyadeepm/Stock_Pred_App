@@ -5,7 +5,7 @@ seaborn
 pandas_datareader
 yfinance
 datetime
-sklearn
+scikit-learn
 keras
 streamlit
 yahoo_fin
