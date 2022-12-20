@@ -7,7 +7,6 @@ yfinance
 datetime
 sklearn
 keras
-warnings
 streamlit
 yahoo_fin
 pandas_ta
