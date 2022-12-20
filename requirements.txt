@@ -12,5 +12,4 @@ yahoo_fin
 pandas_ta
 ta
 plotly
-locale
 GoogleNews
