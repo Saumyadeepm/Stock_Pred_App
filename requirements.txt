@@ -12,6 +12,5 @@ yahoo_fin
 pandas_ta
 ta
 plotly
-json
 locale
 GoogleNews
