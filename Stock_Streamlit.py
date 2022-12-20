@@ -40,7 +40,7 @@ from plotly.graph_objs import Line
 from plotly.subplots import make_subplots
 import json
 import locale
-locale.setlocale(locale.LC_ALL, 'en_US')
+#locale.setlocale(locale.LC_ALL, 'en_US')
 
 from GoogleNews import GoogleNews
 googlenews = GoogleNews()
