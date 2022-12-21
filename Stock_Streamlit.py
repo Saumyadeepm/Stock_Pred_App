@@ -481,26 +481,14 @@ if st.sidebar.button("Apply LSTM"):
 
     st.sidebar.subheader("Display Visualizations")
     sdbar1 = st.sidebar.multiselect("Select:", df_info1)
+    
+    train = data[:training_data_len]
+    valid = data[training_data_len:]
+    
+    valid['Predictions'] = predictions
 
     if 'Closing Price' in sdbar1:
-        # Plotting the Predicted Closing Prices & Compraing with Historical Data
-
-        ## Plotting Using Matplotlib
-        train = data[:training_data_len]
-        valid = data[training_data_len:]
-
-        valid['Predictions'] = predictions
-
-        plt.figure(figsize=(16, 6))
-        plt.title('Model')
-        plt.xlabel('Date', fontsize=18)
-        plt.ylabel('Close Price in USD', fontsize=18)
-        plt.plot(train['Close'])
-        plt.plot(valid[['Close', 'Predictions']])
-        plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
-        fig = plt.show()
-        st.pyplot(fig)
-
+        
 
         #####
         st.header("Closing Price of {} Stock".format(company_name))
@@ -512,7 +500,25 @@ if st.sidebar.button("Apply LSTM"):
         fig = plt.tight_layout()
         st.pyplot(fig)
 
-    #if 'Closing Price' in sdbar1:
+    if 'Predicted Closing Price' in sdbar1:
+        # Plotting the Predicted Closing Prices & Compraing with Historical Data
+
+        ## Plotting Using Matplotlib
+        #train = data[:training_data_len]
+        #valid = data[training_data_len:]
+
+        #valid['Predictions'] = predictions
+
+        plt.figure(figsize=(16, 6))
+        plt.title('Model')
+        plt.xlabel('Date', fontsize=18)
+        plt.ylabel('Close Price in USD', fontsize=18)
+        plt.plot(train['Close'])
+        plt.plot(valid[['Close', 'Predictions']])
+        plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
+        fig = plt.show()
+        st.pyplot(fig)
+
 
 
 
