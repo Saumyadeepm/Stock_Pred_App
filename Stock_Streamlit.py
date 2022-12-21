@@ -522,6 +522,7 @@ if st.sidebar.checkbox("Apply LSTM",False):
         plot_pred_closing_p()
         ## Plotting Using Matplotlib
     if 'Display Prediction Data' in sdbar1:
+        st.header("Predicted Closing Data of {} Stock".format(company_name))
         st.write(valid)
 
 
