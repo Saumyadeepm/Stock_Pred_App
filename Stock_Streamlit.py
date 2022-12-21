@@ -477,7 +477,7 @@ if st.sidebar.checkbox("Apply LSTM",False):
 
 
 
-    df_info1 = ['Closing Price', 'Predicted Closing Price']
+    df_info1 = ['Closing Price', 'Predicted Closing Price', 'Display Prediction Data']
 
     st.sidebar.subheader("Display Visualizations")
     sdbar1 = st.sidebar.multiselect("Select:", df_info1)
@@ -520,7 +520,8 @@ if st.sidebar.checkbox("Apply LSTM",False):
         # Plotting the Predicted Closing Prices & Compraing with Historical Data
         plot_pred_closing_p()
         ## Plotting Using Matplotlib
-        
+    if 'Display Prediction Data' in sdbar1:
+        st.write(valid)
 
 
 
