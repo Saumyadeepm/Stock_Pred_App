@@ -482,32 +482,12 @@ if st.sidebar.button("Apply LSTM"):
     st.sidebar.subheader("Display Visualizations")
     sdbar1 = st.sidebar.multiselect("Select:", df_info1)
     
-    train = data[:training_data_len]
-    valid = data[training_data_len:]
-    
-    valid['Predictions'] = predictions
-
-    if 'Closing Price' in sdbar1:
-        
-
-        #####
-        st.header("Closing Price of {} Stock".format(company_name))
-        plt.figure(figsize=(15, 6))
-        stock['Close'].plot()
-        plt.ylabel('Close Price in USD', fontsize=18)
-        plt.xlabel('Date', fontsize=18)
-        plt.title(f"Closing Price of {company_name} Stock")
-        fig = plt.tight_layout()
-        st.pyplot(fig)
-
-    if 'Predicted Closing Price' in sdbar1:
-        # Plotting the Predicted Closing Prices & Compraing with Historical Data
-
+    def plot_pred_closing_p():
         ## Plotting Using Matplotlib
-        #train = data[:training_data_len]
-        #valid = data[training_data_len:]
+        train = data[:training_data_len]
+        valid = data[training_data_len:]
 
-        #valid['Predictions'] = predictions
+        valid['Predictions'] = predictions
 
         plt.figure(figsize=(16, 6))
         plt.title('Model')
@@ -516,9 +496,31 @@ if st.sidebar.button("Apply LSTM"):
         plt.plot(train['Close'])
         plt.plot(valid[['Close', 'Predictions']])
         plt.legend(['Train', 'Val', 'Predictions'], loc='lower right')
-        fig = plt.show()
+        fig = plt.tight_layout()
         st.pyplot(fig)
+       
+    def plot_closing_p():
+        st.header("Closing Price of {} Stock".format(company_name))
+        plt.figure(figsize=(15, 6))
+        stock['Close'].plot()
+        plt.ylabel('Close Price in USD', fontsize=18)
+        plt.xlabel('Date', fontsize=18)
+        plt.title(f"Closing Price of {company_name} Stock")
+        fig = plt.tight_layout()
+        st.pyplot(fig)
+    
+    if 'Closing Price' in sdbar1:
+        plot_closing_p()
+        
 
+        #####
+        
+
+    if 'Predicted Closing Price' in sdbar1:
+        # Plotting the Predicted Closing Prices & Compraing with Historical Data
+        plot_pred_closing_p()
+        ## Plotting Using Matplotlib
+        
 
 
 
