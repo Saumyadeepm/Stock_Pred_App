@@ -488,7 +488,7 @@ if st.sidebar.checkbox("Apply LSTM",False):
         valid = data[training_data_len:]
 
         valid['Predictions'] = predictions
-
+        st.header("Predicted Closing Price of {} Stock".format(company_name))
         plt.figure(figsize=(16, 6))
         plt.title('Model')
         plt.xlabel('Date', fontsize=18)
