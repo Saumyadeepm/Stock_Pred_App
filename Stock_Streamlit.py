@@ -484,6 +484,7 @@ if st.sidebar.checkbox("Apply LSTM",False):
     
     def plot_pred_closing_p():
         ## Plotting Using Matplotlib
+        global valid
         train = data[:training_data_len]
         valid = data[training_data_len:]
 
