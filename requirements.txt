@@ -13,3 +13,4 @@ pandas_ta
 ta
 plotly
 GoogleNews
+protobuf
