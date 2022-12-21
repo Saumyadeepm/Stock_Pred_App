@@ -2,7 +2,7 @@ pandas
 numpy
 matplotlib
 seaborn
-pandas_datareader
+pandas-datareader
 yfinance
 datetime
 scikit-learn
