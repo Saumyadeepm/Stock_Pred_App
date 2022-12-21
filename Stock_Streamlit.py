@@ -378,7 +378,7 @@ if 'Avg Daily Return Using Hist' in sdbar:
 closing_df = pd.DataFrame(stock['Adj Close'])
 #display(closing_df)
 
-if st.sidebar.checkbox("Apply LSTM",false):
+if st.sidebar.checkbox("Apply LSTM",False):
     st.subheader("LSTM Prediction Model")
 
     ## Creating Dataframe that contains closing Price of Stock
