@@ -48,7 +48,7 @@ googlenews = GoogleNews(lang='en', region='IN')
 googlenews = GoogleNews(encode='utf-8')
 #---------------------------------------------------------------#
 def main():
-    st.title("Stock Closing Price Forcasting App")
+    st.title("Stock Closing Price Forecasting App")
     st.sidebar.title('Sidebar')
     st.sidebar.subheader("Options")
 if __name__ == '__main__':
